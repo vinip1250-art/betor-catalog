@@ -16,10 +16,12 @@ jobs:
     - uses: actions/setup-node@v5
       with:
         node-version: 22
+    - id: date
+      run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
     - uses: actions/cache@v4
       with:
         path: .cache
-        key: betor-cache
+        key: betor-cache-${{ steps.date.outputs.today }}
     - run: npm ci
     - run: npm link
     - env:
