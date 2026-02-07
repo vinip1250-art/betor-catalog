@@ -16,10 +16,10 @@ export default (item, provider, torrent) => (`
     data-torrent-languages="${torrent.languages.join(',')}"
     data-torrent-size="${torrent.torrent_size}"
     ${torrent.torrent_files ? `data-torrent-files="${torrent.torrent_files.join(';')}"` : ''}
-    data-torrent-num-peers="${torrent.torrent_num_peers}"
-    data-torrent-num-seeds="${torrent.torrent_num_seeds}"
+    data-torrent-num-peers="${torrent.torrent_num_peers || 0}"
+    data-torrent-num-seeds="${torrent.torrent_num_seeds || 0}"
     data-torrent-inserted-at="${torrent.inserted_at}">
       <div class="name">🧲&emsp;${torrent.torrent_name || '-'}</div>
-      <div class="size">${formatBytes(torrent.torrent_size)}</div>
+      <div class="size">${torrent.torrent_size ? formatBytes(torrent.torrent_size) : '-'}</div>
     </div>
 `)

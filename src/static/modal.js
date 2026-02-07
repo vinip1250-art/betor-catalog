@@ -22,7 +22,7 @@ const openModal = (bodyElem, torrentElem) => {
     <div class="close"></div>
     <div class="modal-content">
       <h1>${torrentName || '-'}</h1>
-      <p><strong>Seeds:</strong> ${torrentNumSeeds || '-'} / <strong>Peers:</strong> ${torrentNumPeers || '-'}</p>
+      <p><strong>Seeds:</strong> ${torrentNumSeeds} / <strong>Peers:</strong> ${torrentNumPeers}</p>
       ${filesContent}
     </div>
   `
